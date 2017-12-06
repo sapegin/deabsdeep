@@ -1,6 +1,6 @@
 {
   "name": "deabsdeep",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Recursively replace absolute paths in object keys and values or array values with a `~`",
   "author": {
     "name": "Artem Sapegin",
@@ -57,7 +57,5 @@
       "git add"
     ]
   },
-  "dependencies": {
-    "is-plain-obj": "^1.1.0"
-  }
+  "dependencies": {}
 }
