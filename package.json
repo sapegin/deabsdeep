@@ -12,9 +12,9 @@
   "engines": {
     "node": ">=4"
   },
-  "main": "index.js",
+  "main": "src/index.js",
   "files": [
-    "index.js",
+    "src",
     "serializer.js"
   ],
   "scripts": {
@@ -58,7 +58,6 @@
     ]
   },
   "dependencies": {
-    "is-plain-obj": "^1.1.0",
-    "map-obj": "^2.0.0"
+    "is-plain-obj": "^1.1.0"
   }
 }

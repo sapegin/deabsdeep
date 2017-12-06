@@ -1,4 +1,4 @@
-const mapObj = require('map-obj');
+const mapObj = require('./mapObj');
 
 const MASK = '~';
 const DIRNAME = __dirname.substring(0, __dirname.indexOf('/node_modules/')) || __dirname;
@@ -24,5 +24,5 @@ module.exports = function(obj, options) {
 		return obj.map(deabs);
 	}
 
-	return mapObj(obj, (key, value) => [deabs(key), deabs(value)], { deep: true });
+	return mapObj(obj, (key, value) => [deabs(key), deabs(value)]);
 };

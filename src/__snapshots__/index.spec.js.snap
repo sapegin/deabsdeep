@@ -19,6 +19,21 @@ Array [
 ]
 `;
 
+exports[`keep custom constructors 1`] = `
+Object {
+  "foo": Object {
+    "one": 1,
+    "three": Array [
+      4,
+      5,
+    ],
+    "two": Pizza {
+      "data": "~/a/b.js",
+    },
+  },
+}
+`;
+
 exports[`recursively replace absolute paths in keys and values 1`] = `
 Object {
   "foo": Object {

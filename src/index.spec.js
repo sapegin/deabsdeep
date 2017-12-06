@@ -28,23 +28,36 @@ test('recursively replace custom paths in keys and values', () => {
 });
 
 test('absolute paths in array values', () => {
-	const result = deabsDeep(
-		[
-			`/foo/bar/a/b.js`,
-			`/foo/bar/e/f.txt`,
-			42,
-			{
-				bar: {
-					baz: 42,
-				},
+	const result = deabsDeep([
+		`${__dirname}/a/b.js`,
+		`${__dirname}/e/f.txt`,
+		42,
+		{
+			bar: {
+				baz: 42,
 			},
-		],
-		{ root: '/foo/bar' }
-	);
+		},
+	]);
 	expect(result).toMatchSnapshot();
 });
 
 test('custom mask', () => {
 	const result = deabsDeep([`${__dirname}/a/b.js`], { mask: '<rootDir>' });
+	expect(result).toMatchSnapshot();
+});
+
+test('keep custom constructors', () => {
+	class Pizza {
+		constructor(x) {
+			this.data = x;
+		}
+	}
+	const result = deabsDeep({
+		foo: {
+			one: 1,
+			two: new Pizza(`${__dirname}/a/b.js`),
+			three: [4, 5],
+		},
+	});
 	expect(result).toMatchSnapshot();
 });
