@@ -19,6 +19,16 @@ Array [
 ]
 `;
 
+exports[`ignore non plain objects 1`] = `
+Object {
+  "a": undefined,
+  "b": null,
+  "c": 1,
+  "d": 1984-12-05T02:24:00.000Z,
+  "e": /x/,
+}
+`;
+
 exports[`keep custom constructors 1`] = `
 Object {
   "foo": Object {
