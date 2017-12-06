@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`absolute paths in array values 1`] = `
+Array [
+  "~/a/b.js",
+  "~/e/f.txt",
+  42,
+  Object {
+    "bar": Object {
+      "baz": 42,
+    },
+  },
+]
+`;
+
+exports[`custom mask 1`] = `
+Array [
+  "<rootDir>/a/b.js",
+]
+`;
+
+exports[`recursively replace absolute paths in keys and values 1`] = `
+Object {
+  "foo": Object {
+    "bar": 1,
+    "~/e/f.txt": "~/g/h.txt",
+  },
+  "~/a/b.js": "~/c/d.js",
+}
+`;
+
+exports[`recursively replace custom paths in keys and values 1`] = `
+Object {
+  "foo": Object {
+    "bar": Object {
+      "baz": 42,
+    },
+    "~/e/f.txt": "~/g/h.txt",
+  },
+  "~/a/b.js": "~/c/d.js",
+}
+`;

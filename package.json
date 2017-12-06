@@ -1,0 +1,64 @@
+{
+  "name": "deabsdeep",
+  "version": "1.0.0",
+  "description": "Recursively replace absolute paths in object keys and values or array values with a `~`",
+  "author": {
+    "name": "Artem Sapegin",
+    "url": "http://sapegin.me"
+  },
+  "homepage": "https://github.com/sapegin/deabsdeep",
+  "repository": "sapegin/deabsdeep",
+  "license": "MIT",
+  "engines": {
+    "node": ">=4"
+  },
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "serializer.js"
+  ],
+  "scripts": {
+    "lint": "eslint . --cache --fix",
+    "pretest": "npm run lint",
+    "precommit": "lint-staged",
+    "test:jest": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test": "npm run test:jest"
+  },
+  "keywords": [
+    "object",
+    "array",
+    "deep",
+    "nested",
+    "recursive",
+    "keys",
+    "values",
+    "path",
+    "directory",
+    "folder",
+    "absolute",
+    "relative",
+    "serializer",
+    "jest"
+  ],
+  "devDependencies": {
+    "eslint": "^4.12.1",
+    "eslint-config-tamia": "^4.2.3",
+    "eslint-plugin-prettier": "^2.3.1",
+    "husky": "^0.14.3",
+    "jest": "^21.2.1",
+    "lint-staged": "^6.0.0",
+    "prettier": "^1.9.1"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "is-plain-obj": "^1.1.0",
+    "map-obj": "^2.0.0"
+  }
+}
