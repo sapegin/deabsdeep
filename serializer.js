@@ -6,7 +6,7 @@ const KEY = '__JEST_SERIALIZER_DEABSDEEP__';
 
 module.exports = {
 	test(val) {
-		return !Object.prototype.hasOwnProperty.call(val, KEY) && (Array.isArray(val) || isObject(val));
+		return (Array.isArray(val) || isObject(val)) && !Object.prototype.hasOwnProperty.call(val, KEY);
 	},
 	print(val, serialize) {
 		const newVal = deabsDeep(val);
