@@ -47,28 +47,19 @@ test('custom mask', () => {
 });
 
 test('ignore non plain objects', () => {
-	const result = deabsDeep({
-		a: undefined,
-		b: null,
-		c: 1,
-		d: new Date('1984-12-05T03:24:00'),
-		e: /x/,
-	});
-	expect(result).toMatchSnapshot();
-});
-
-test('keep custom constructors', () => {
 	class Pizza {
 		constructor(x) {
 			this.data = x;
 		}
 	}
 	const result = deabsDeep({
-		foo: {
-			one: 1,
-			two: new Pizza(`${__dirname}/a/b.js`),
-			three: [4, 5],
-		},
+		a: undefined,
+		b: null,
+		c: 1,
+		d: 'x',
+		e: new Date('1984-12-05T03:24:00'),
+		f: /x/,
+		g: new Pizza('x'),
 	});
 	expect(result).toMatchSnapshot();
 });

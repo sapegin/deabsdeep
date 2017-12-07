@@ -24,22 +24,11 @@ Object {
   "a": undefined,
   "b": null,
   "c": 1,
-  "d": 1984-12-05T02:24:00.000Z,
-  "e": /x/,
-}
-`;
-
-exports[`keep custom constructors 1`] = `
-Object {
-  "foo": Object {
-    "one": 1,
-    "three": Array [
-      4,
-      5,
-    ],
-    "two": Pizza {
-      "data": "~/a/b.js",
-    },
+  "d": "x",
+  "e": 1984-12-05T02:24:00.000Z,
+  "f": /x/,
+  "g": Pizza {
+    "data": "x",
   },
 }
 `;

@@ -1,7 +1,7 @@
 // Adapted from https://github.com/sindresorhus/map-obj
-// Uses constructors of original objects to create copies
+// Updates only arrays and plain objects
 
-const isObject = require('./isObject');
+const isObject = require('is-plain-obj');
 
 /**
  * @param {object} obj
@@ -16,7 +16,7 @@ module.exports = function mapObj(obj, fn, seen) {
 		return seen.get(obj);
 	}
 
-	const target = new obj.constructor();
+	const target = {};
 
 	seen.set(obj, target);
 
