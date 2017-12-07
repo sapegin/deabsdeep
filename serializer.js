@@ -1,3 +1,5 @@
+'use strict';
+
 const deabsDeep = require('./src');
 const isObject = require('is-plain-obj');
 

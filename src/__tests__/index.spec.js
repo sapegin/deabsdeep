@@ -1,4 +1,4 @@
-const deabsDeep = require('./index');
+const deabsDeep = require('../index');
 
 test('recursively replace absolute paths in keys and values', () => {
 	const result = deabsDeep({

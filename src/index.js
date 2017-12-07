@@ -1,3 +1,5 @@
+'use strict';
+
 const mapObj = require('./mapObj');
 
 const MASK = '~';

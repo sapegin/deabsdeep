@@ -1,3 +1,5 @@
+'use strict';
+
 // Adapted from https://github.com/sindresorhus/map-obj
 // Updates only arrays and plain objects
 

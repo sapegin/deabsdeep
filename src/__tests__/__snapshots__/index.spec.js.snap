@@ -2,8 +2,8 @@
 
 exports[`absolute paths in array values 1`] = `
 Array [
-  "~/a/b.js",
-  "~/e/f.txt",
+  "~/__tests__/a/b.js",
+  "~/__tests__/e/f.txt",
   42,
   Object {
     "bar": Object {
@@ -15,7 +15,7 @@ Array [
 
 exports[`custom mask 1`] = `
 Array [
-  "<rootDir>/a/b.js",
+  "<rootDir>/__tests__/a/b.js",
 ]
 `;
 
@@ -37,9 +37,9 @@ exports[`recursively replace absolute paths in keys and values 1`] = `
 Object {
   "foo": Object {
     "bar": 1,
-    "~/e/f.txt": "~/g/h.txt",
+    "~/__tests__/e/f.txt": "~/__tests__/g/h.txt",
   },
-  "~/a/b.js": "~/c/d.js",
+  "~/__tests__/a/b.js": "~/__tests__/c/d.js",
 }
 `;
 
