@@ -1,5 +1,7 @@
 # deabsdeep
 
+[![Build Status](https://travis-ci.org/sapegin/deabsdeep.svg)](https://travis-ci.org/sapegin/deabsdeep)
+
 Recursively replace absolute paths in object keys and values or array values with a `~`.
 
 ## Installation
