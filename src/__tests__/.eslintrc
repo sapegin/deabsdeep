@@ -1,8 +1,0 @@
-{
-  "extends": "tamia",
-	"parserOptions": {
-		"sourceType": "module"
-	},
-	"rules": {
-		"strict": 0
-	}}
