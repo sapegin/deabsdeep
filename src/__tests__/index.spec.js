@@ -57,7 +57,6 @@ test('ignore non plain objects', () => {
 		b: null,
 		c: 1,
 		d: 'x',
-		e: new Date('1984-12-05T03:24:00'),
 		f: /x/,
 		g: new Pizza('x'),
 	});

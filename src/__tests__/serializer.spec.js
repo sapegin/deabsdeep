@@ -12,7 +12,6 @@ describe('test()', () => {
 		expect(serializer.test(undefined)).toBe(false);
 		expect(serializer.test(1)).toBe(false);
 		expect(serializer.test('x')).toBe(false);
-		expect(serializer.test(new Date('1984-12-05T03:24:00'))).toBe(false);
 		expect(serializer.test(/x/)).toBe(false);
 	});
 	test('visited object returns false', () => {
