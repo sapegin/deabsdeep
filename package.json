@@ -1,6 +1,6 @@
 {
   "name": "deabsdeep",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Recursively replace absolute paths in objects and arrays with ~",
   "author": {
     "name": "Artem Sapegin",
