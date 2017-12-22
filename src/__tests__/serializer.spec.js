@@ -26,7 +26,7 @@ const serializeValue = x => x.toString();
 describe('print()', () => {
 	test('serializes array', () => {
 		expect(serializer.print([`${__dirname}/a/b.js`, 2], serializeValue)).toBe(
-			'~/__tests__/a/b.js,2'
+			'~/src/__tests__/a/b.js,2'
 		);
 	});
 });

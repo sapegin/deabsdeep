@@ -1,9 +1,10 @@
 'use strict';
 
+const getRootDir = require('./getRootDir');
 const mapObj = require('./mapObj');
 
 const MASK = '~';
-const DIRNAME = __dirname.substring(0, __dirname.indexOf('/node_modules/')) || __dirname;
+const DIRNAME = getRootDir();
 
 /**
  * Recursively replace absolute paths in object keys and values or in array values with a “~”.
