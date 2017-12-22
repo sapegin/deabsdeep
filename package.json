@@ -59,10 +59,5 @@
   },
   "dependencies": {
     "is-plain-obj": "^1.1.0"
-  },
-  "release": {
-    "analyzeCommits": "semantic-release-tamia/analyzeCommits",
-    "generateNotes": "semantic-release-tamia/generateNotes",
-    "verifyRelease": "semantic-release-tamia/verifyRelease"
   }
 }
