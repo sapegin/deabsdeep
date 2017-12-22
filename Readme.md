@@ -1,6 +1,7 @@
 # deabsdeep
 
 [![Build Status](https://travis-ci.org/sapegin/deabsdeep.svg)](https://travis-ci.org/sapegin/deabsdeep)
+[![npm](https://img.shields.io/npm/v/deabsdeep.svg)](https://www.npmjs.com/package/deabsdeep)
 
 Recursively replace absolute paths in object keys and values or array values with a `~`.
 
