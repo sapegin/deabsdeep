@@ -1,12 +1,15 @@
 'use strict';
 
+const path = require('path');
 const deabsDeep = require('../index');
+
+const rootDir = path.resolve(__dirname, '../..');
 
 test('recursively replace absolute paths in keys and values', () => {
 	const result = deabsDeep({
-		[`${__dirname}/a/b.js`]: `${__dirname}/c/d.js`,
+		[`${rootDir}/a/b.js`]: `${rootDir}/c/d.js`,
 		foo: {
-			[`${__dirname}/e/f.txt`]: `${__dirname}/g/h.txt`,
+			[`${rootDir}/e/f.txt`]: `${rootDir}/g/h.txt`,
 			bar: 1,
 		},
 	});
@@ -31,8 +34,8 @@ test('recursively replace custom paths in keys and values', () => {
 
 test('absolute paths in array values', () => {
 	const result = deabsDeep([
-		`${__dirname}/a/b.js`,
-		`${__dirname}/e/f.txt`,
+		`${rootDir}/a/b.js`,
+		`${rootDir}/e/f.txt`,
 		42,
 		{
 			bar: {
@@ -44,7 +47,7 @@ test('absolute paths in array values', () => {
 });
 
 test('custom mask', () => {
-	const result = deabsDeep([`${__dirname}/a/b.js`], { mask: '<rootDir>' });
+	const result = deabsDeep([`${rootDir}/a/b.js`], { mask: '<rootDir>' });
 	expect(result).toMatchSnapshot();
 });
 

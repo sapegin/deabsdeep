@@ -1,5 +1,6 @@
 'use strict';
 
+const escape = require('escape-string-regexp');
 const getRootDir = require('./getRootDir');
 const mapObj = require('./mapObj');
 
@@ -20,7 +21,7 @@ module.exports = function(obj, options) {
 	const root = options.root || DIRNAME;
 	const mask = options.mask || MASK;
 
-	const regExp = new RegExp(root, 'g');
+	const regExp = new RegExp(escape(root), 'g');
 	const deabs = s => (typeof s === 'string' ? s.replace(regExp, mask) : s);
 
 	if (Array.isArray(obj)) {

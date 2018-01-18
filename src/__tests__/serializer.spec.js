@@ -1,6 +1,9 @@
 'use strict';
 
+const path = require('path');
 const serializer = require('../../serializer');
+
+const rootDir = path.resolve(__dirname, '../..');
 
 describe('test()', () => {
 	test('array returns true', () => {
@@ -25,8 +28,6 @@ const serializeValue = x => x.toString();
 
 describe('print()', () => {
 	test('serializes array', () => {
-		expect(serializer.print([`${__dirname}/a/b.js`, 2], serializeValue)).toBe(
-			'~/src/__tests__/a/b.js,2'
-		);
+		expect(serializer.print([`${rootDir}/a/b.js`, 2], serializeValue)).toBe('~/a/b.js,2');
 	});
 });
