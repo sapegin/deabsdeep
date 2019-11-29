@@ -67,3 +67,10 @@ test('ignore non plain objects', () => {
 	});
 	expect(result).toMatchSnapshot();
 });
+
+test('load absolute path on windows too', () => {
+	const result = deabsDeep({
+		winPath: __dirname,
+	});
+	expect(result.winPath).toMatchInlineSnapshot(`"~/src/__tests__"`);
+});

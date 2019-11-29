@@ -1,5 +1,6 @@
 'use strict';
 
+const path = require('path');
 const escape = require('escape-string-regexp');
 const getRootDir = require('./getRootDir');
 const mapObj = require('./mapObj');
@@ -22,7 +23,16 @@ module.exports = function(obj, options) {
 	const mask = options.mask || MASK;
 
 	const regExp = new RegExp(escape(root), 'g');
-	const deabs = s => (typeof s === 'string' ? s.replace(regExp, mask) : s);
+	const pureDeabs = s => s.replace(regExp, mask);
+
+	const normalizeSeparators = s => (s ? s.replace(new RegExp('\\' + path.sep, 'g'), '/') : s);
+
+	const deabs = s => {
+		if (typeof s === 'string') {
+			return path.sep === '/' ? pureDeabs(s) : normalizeSeparators(pureDeabs(s));
+		}
+		return s;
+	};
 
 	if (Array.isArray(obj)) {
 		return obj.map(deabs);
