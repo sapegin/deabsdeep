@@ -25,14 +25,9 @@ module.exports = function(obj, options) {
 	const regExp = new RegExp(escape(root), 'g');
 	const pureDeabs = s => s.replace(regExp, mask);
 
-	const normalizeSeparators = s => (s ? s.replace(new RegExp('\\' + path.sep, 'g'), '/') : s);
+	const normalizeSeparators = s => s.replace(new RegExp('\\' + path.sep, 'g'), '/');
 
-	const deabs = s => {
-		if (typeof s === 'string') {
-			return path.sep === '/' ? pureDeabs(s) : normalizeSeparators(pureDeabs(s));
-		}
-		return s;
-	};
+	const deabs = s => (typeof s === 'string' ? normalizeSeparators(pureDeabs(s)) : s);
 
 	if (Array.isArray(obj)) {
 		return obj.map(deabs);
