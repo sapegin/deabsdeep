@@ -75,5 +75,5 @@ test('load absolute path on windows too', () => {
 		},
 		{ root: 'C:\\Folder_Containing' }
 	);
-	expect(result.winPath).toMatchInlineSnapshot(`"~/tests"`);
+	expect(result.winPath).toBe('~/tests');
 });
