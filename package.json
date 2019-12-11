@@ -4,13 +4,13 @@
   "description": "Recursively replace absolute paths in objects and arrays with ~",
   "author": {
     "name": "Artem Sapegin",
-    "url": "http://sapegin.me"
+    "url": "https://sapegin.me"
   },
   "homepage": "https://github.com/sapegin/deabsdeep",
   "repository": "sapegin/deabsdeep",
   "license": "MIT",
   "engines": {
-    "node": ">=4"
+    "node": ">=8.9"
   },
   "main": "src/index.js",
   "files": [
