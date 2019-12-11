@@ -20,7 +20,9 @@ describe('test()', () => {
 		expect(serializer.test(/x/)).toBe(false);
 	});
 	test('visited object returns false', () => {
-		expect(serializer.test({ __JEST_SERIALIZER_DEABSDEEP__: undefined })).toBe(false);
+		expect(serializer.test({ __JEST_SERIALIZER_DEABSDEEP__: undefined })).toBe(
+			false
+		);
 	});
 });
 
@@ -28,6 +30,8 @@ const serializeValue = x => x.toString();
 
 describe('print()', () => {
 	test('serializes array', () => {
-		expect(serializer.print([`${rootDir}/a/b.js`, 2], serializeValue)).toBe('~/a/b.js,2');
+		expect(serializer.print([`${rootDir}/a/b.js`, 2], serializeValue)).toBe(
+			'~/a/b.js,2'
+		);
 	});
 });

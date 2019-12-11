@@ -9,3 +9,4 @@ Thumbs.db
 .eslintcache
 coverage/
 Changelog.md
+yarn.lock
