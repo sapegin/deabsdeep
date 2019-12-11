@@ -9,5 +9,7 @@ const path = require('path');
 module.exports = function gtRootDir(dir) {
 	dir = dir || __dirname;
 	const m = dir.match(/[\\/]node_modules[\\/]/);
-	return m ? dir.substring(0, m.index) : path.resolve(require.resolve('.'), '../..');
+	return m
+		? dir.substring(0, m.index)
+		: path.resolve(require.resolve('.'), '../..');
 };

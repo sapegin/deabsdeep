@@ -1,7 +1,6 @@
 # deabsdeep
 
-[![Build Status](https://travis-ci.org/sapegin/deabsdeep.svg)](https://travis-ci.org/sapegin/deabsdeep)
-[![npm](https://img.shields.io/npm/v/deabsdeep.svg)](https://www.npmjs.com/package/deabsdeep)
+[![Build Status](https://travis-ci.org/sapegin/deabsdeep.svg)](https://travis-ci.org/sapegin/deabsdeep) [![npm](https://img.shields.io/npm/v/deabsdeep.svg)](https://www.npmjs.com/package/deabsdeep)
 
 Recursively replace absolute paths in object keys and values or array values with a `~`.
 
@@ -14,15 +13,15 @@ npm install deabsdeep
 ## Usage
 
 ```js
-const deabsDeep = require('deabsdeep')
+const deabsDeep = require('deabsdeep');
 
 // __dirname = /foo/bar
 
 deabsDeep({
   '/foo/bar/a.txt': {
-      baz: '/foo/bar/a.txt'
+    baz: '/foo/bar/a.txt'
   }
-})
+});
 /* =>
 {
   '~/a.txt': {
@@ -31,10 +30,7 @@ deabsDeep({
 }
 */
 
-deabsDeep([
-  '/foo/bar/a.txt',
-  '/foo/bar/a.txt'
-])
+deabsDeep(['/foo/bar/a.txt', '/foo/bar/a.txt']);
 /* =>
 [
   '~/a.txt',
@@ -50,7 +46,7 @@ deabsDeep([
 A root folder, by default the project root folder (where your `package.json` is) will be used:
 
 ```js
-deabsDeep(obj, { root: '/root/directory' })
+deabsDeep(obj, { root: '/root/directory' });
 ```
 
 ### `mask` (default: `~`)
@@ -58,7 +54,7 @@ deabsDeep(obj, { root: '/root/directory' })
 A string to replace the root folder with:
 
 ```js
-deabsDeep(obj, { mask: '<rootDir>' })
+deabsDeep(obj, { mask: '<rootDir>' });
 ```
 
 ## Jest serializer
