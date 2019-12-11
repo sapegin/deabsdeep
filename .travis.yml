@@ -7,7 +7,7 @@ node_js:
   - 10
   - 8
 after_success:
-  - semantic-release
+  - npx semantic-release
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/
